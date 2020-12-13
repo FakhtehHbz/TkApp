@@ -1,0 +1,66 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button menu="mnu-first"></ion-menu-button>
+        </ion-buttons>
+        <ion-title class="no-padding"> سرمایه من</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-segment (ionChange)=changeStockerCapital($event)>
+        <ion-segment-button value="capital" checked (click)="layout='capital'">
+            <ion-label>سرمایه</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="facilityGuarantee" (click)="layout='facilityGuarantee'">
+            <ion-label>ضمانت تسهیلات</ion-label>
+        </ion-segment-button>
+    </ion-segment>
+
+    <ion-card class="box">
+        <ion-card-header class="title">
+            <ion-icon name="person" color="primary"></ion-icon>
+            <ion-label>خلاصه وضعیت</ion-label>
+        </ion-card-header>
+        <ion-card-content>
+            <div *ngIf="layout=='capital'">
+
+
+                <ion-list *ngFor="let p of capitalInfo">
+                    <ion-item>
+                        <ion-label>سرمایه</ion-label>
+                        <ion-label>{{p.capital | irc|faNum}}</ion-label>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label>سود</ion-label>
+                        <ion-label>{{p.profit | irc|faNum}}</ion-label>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label>حق عضویت</ion-label>
+                        <ion-label>{{p.membership | irc|faNum}}</ion-label>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label>سال مالی</ion-label>
+                        <ion-label>{{p.year|faNum}}</ion-label>
+                    </ion-item>
+                </ion-list>
+            </div>
+
+            <div *ngIf="layout=='facilityGuarantee'">
+                <ion-list *ngFor="let p of capitalInfo">
+
+                    <ion-item>
+                        <ion-label>مبلغ توقیف سرمایه:</ion-label>
+                        <ion-label>{{p.block|faNum}}</ion-label>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label>مبلغ رفع توقیف:</ion-label>
+                        <ion-label>{{p.unblock|faNum}}</ion-label>
+                    </ion-item>
+                </ion-list>
+            </div>
+
+        </ion-card-content>
+    </ion-card>
+</ion-content>
