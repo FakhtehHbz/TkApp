@@ -1,0 +1,55 @@
+<ion-app>
+    <ion-menu side="start" menuId="mnu-first">
+        <ion-header class="header">
+            <ion-toolbar>
+                <ion-item>
+                    <ion-icon name="person-circle-sharp" class="circle" slot="start"></ion-icon>
+                    <ion-label> Login Name</ion-label>
+                </ion-item>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content>
+            <ion-list>
+                <div class="nav">
+                    <ion-menu-toggle menu="mnu-first">
+                        <div class="nav-item">
+                            <ion-item routerLink="./tabs/profile" lines="none">
+                                <ion-icon slot="start" name="person"></ion-icon>
+                                <ion-label lines="none">مشخصـات سـهامدار</ion-label>
+                            </ion-item>
+                        </div>
+                    </ion-menu-toggle>
+
+                    <ion-menu-toggle menu="mnu-first">
+                        <ion-item routerLink="./tabs/capital" lines="none">
+                            <ion-icon slot="start" name="wallet"></ion-icon>
+                            <ion-label>ســرمایه سـهامدار</ion-label>
+                        </ion-item>
+                    </ion-menu-toggle>
+                    <ion-menu-toggle menu="mnu-first">
+                        <ion-item routerLink="./loan" lines="none">
+                            <ion-icon name="pricetag" slot="start"></ion-icon>
+                            <ion-label>تسهیلات سـهامدار</ion-label>
+                        </ion-item>
+                    </ion-menu-toggle>
+                    <ion-menu-toggle menu="mnu-first">
+                        <ion-item lines="none">
+                            <ion-icon slot="start" name="exit"></ion-icon>
+                            <ion-label (click)='logout()'>خــروج</ion-label>
+
+                        </ion-item>
+                    </ion-menu-toggle>
+                </div>
+            </ion-list>
+
+
+        </ion-content>
+
+    </ion-menu>
+
+    <ion-router-outlet main></ion-router-outlet>
+
+
+
+
+</ion-app>

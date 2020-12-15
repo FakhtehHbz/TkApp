@@ -1,0 +1,51 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button menu="mnu-first"></ion-menu-button>
+        </ion-buttons>
+        <ion-title>تسهیلات</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card class="box">
+        <ion-card-header class="title">
+            <ion-icon name="person" color="primary"></ion-icon>
+            <ion-label>سوابق تسهیلات</ion-label>
+        </ion-card-header>
+        <ion-card-content>
+
+
+
+            <ion-list *ngFor="let p of loanlist">
+                <ion-item>
+                    <ion-label>شماره قرارداد</ion-label>
+                    <ion-label>{{p.contractnumber|faNum}}</ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-label>عنوان تسهیلات</ion-label>
+                    <ion-label>{{p.ProtocolName}}</ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-label>مبلغ تسهیلات</ion-label>
+                    <ion-label>{{p.price | irc|faNum}}</ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-label>قسط معوق</ion-label>
+                    <ion-label>{{p.countdelayed |faNum}}</ion-label>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label>باقی مانده تسهیلات</ion-label>
+                    <ion-label>{{p.RemainDebt | irc|faNum}}</ion-label>
+                </ion-item>
+
+
+            </ion-list>
+
+
+
+
+        </ion-card-content>
+    </ion-card>
+</ion-content>

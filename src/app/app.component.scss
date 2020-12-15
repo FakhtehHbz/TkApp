@@ -1,0 +1,17 @@
+ion-menu ion-item ion-icon {
+    color: var(--ion-color-primary, #870a6e);
+}
+
+ion-menu.md {
+    --width: 230px;
+}
+
+ion-menu.ios {
+    --width: 250px;
+}
+
+.circle {
+    height: 40px;
+    width: 40px;
+    color: #615c5c !important;
+}
